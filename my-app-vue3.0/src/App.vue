@@ -9,7 +9,6 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import test from "./components/test.vue"
-import username from "./components/username.vue"
 </script>
 
 <style>

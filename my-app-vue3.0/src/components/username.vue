@@ -1,11 +1,23 @@
 <template>
-  <div id="son">
+  <div class="userName">
+    <!-- 双向绑定v-modv-model用法 -->
     <input
       type="text"
-      :value="msg"
-      @input="$emit('update:msg', $event.target.value)"
+      :value="title"
+      @input="$emit('update:title', $event.target.value)"
     />
-    {{ msg }}
+    userName:{{ title }}
+    <!-- 多个v-model双向绑定 -->
+    <input
+      type="text"
+      :value="firstName"
+      @input="$emit('update:firstName', $event.target.value)"
+    />
+    <input
+      type="text"
+      :value="lastName"
+      @input="$emit('update:lastName', $event.target.value)"
+    />
   </div>
 </template>
 
@@ -17,11 +29,17 @@ export default {
     }
   },
   props: {
-    msg: {
+    title: {
       type: String,
+    },
+    firstName: {
+      type: String
+    },
+    lastName: {
+      type: String
     }
   },
-  emits: ["update:msg"]
+  emits: ["update:title", "update:firstName", "update:lastName"]
 }
 </script>
 

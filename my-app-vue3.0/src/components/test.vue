@@ -1,20 +1,29 @@
 <template>
   <div>
-    <username v-model="msg"></username>
-    {{ msg }}
+    <!-- 父组件 -->
+    <user-name v-model:title="msg"></user-name>
+    test:{{ msg }}
+
+    <user-name
+      v-model:firstName="firstName"
+      v-model:lastName="lastName"
+    ></user-name>
+    {{ firstName }}---{{ lastName }}
   </div>
 </template>
 
 <script>
-import username from "./username.vue"
+import UserName from "./username.vue"
 export default {
   data () {
     return {
-      msg: "hello vue3.0"
+      msg: "hello vue3.0",
+      firstName: "zhou",
+      lastName: "ddddd"
     }
   },
-  component: {
-    username
+  components: {
+    UserName
   }
 }
 </script>
