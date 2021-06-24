@@ -1,6 +1,6 @@
 <template>
   <div>
-    <username v-model:msg="msg"></username>
+    <username v-model="msg"></username>
     {{ msg }}
   </div>
 </template>
